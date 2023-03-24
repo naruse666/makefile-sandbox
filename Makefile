@@ -5,6 +5,8 @@ CC   = cc
 CFLAGS =  -Wall
 INC  = -I./include
 
+.DEFAULT_GOAL := all
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -13,6 +15,7 @@ $(NAME): $(OBJS)
 .c.o:
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
+.PHONY: clean
 clean:
 	rm -f $(OBJS)
 
